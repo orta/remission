@@ -14,5 +14,3 @@ have three main folders:
 Both emission and reaction will consume the components in some sense, either directly through file references
 or through a third library that represents components for both. Ideally, we can get components from both into the same 
 root folder, and we can find _some sense_ of connection between them all.
-
-## 
