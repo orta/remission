@@ -1,0 +1,48 @@
+{
+  // Use IntelliSense to learn about possible Node.js debug attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Server",
+      "preLaunchTask": "compile:server",
+      "program": "${workspaceRoot}/index.js",
+      "args": [
+        "${workspaceRoot}/dist"
+      ],
+      "sourceMaps": true,
+      "outFiles": [
+        "${workspaceRoot}/dist/**/*.js"
+      ],
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+    "type": "chrome",
+    "request": "launch",
+    "preLaunchTask": "storybook",
+    "name": "Launch Chrome",
+    "url": "http://localhost:4444",
+    "webRoot": "${workspaceRoot}/src"
+  },
+  {
+    "name": "Run Tests With Debugger (slower, use yarn for normal work)",
+    "type": "node",
+    "request": "launch",
+    "port": 5858,
+    "address": "localhost",
+    "sourceMaps": true,
+    "stopOnEntry": false,
+    "runtimeExecutable": null,
+    "runtimeArgs": [
+      "debug",
+      "--debug-brk",
+      "./node_modules/.bin/jest",
+      "-i"
+    ],
+    "cwd": "${workspaceRoot}"
+    }
+  ]
+}
